@@ -15,22 +15,22 @@ public:
 		int bye = 1;
 		while (bye)
 		{
-			if (!(numerator_ % 2) && !(denominator_ % 2))
+			if (!(numerator_ % 2) && !(denominator_ % 2)) // если знаменатель и числитель делятся на 2
 			{
 				numerator_ = numerator_ / 2;
 				denominator_ = denominator_ / 2;
 			}
-			else if (!(numerator_ % 3) && !(denominator_ % 3))
+			else if (!(numerator_ % 3) && !(denominator_ % 3)) // если знаменатель и числитель делятся на 2
 			{
 				numerator_ = numerator_ / 3;
 				denominator_ = denominator_ / 3;
 			}
-			else if (!(numerator_ % numerator_) && !(denominator_ % numerator_) && (numerator_ > 1))
+			else if (/*!(numerator_ % numerator_) && */!(denominator_ % numerator_) && (numerator_ > 1)) // 
 			{
 				denominator_ = denominator_ / numerator_;
-				numerator_ = numerator_ / numerator_;
+				numerator_ = 1;
 			}
-			else if (!(numerator_ % denominator_) && !(denominator_ % denominator_) && (denominator_ > 1))
+			else if (!(numerator_ % denominator_) /*&& !(denominator_ % denominator_) */&& (denominator_ > 1))
 			{
 				numerator_ = numerator_ / denominator_;
 				denominator_ = denominator_ / denominator_;
@@ -117,7 +117,7 @@ public:
 		b = b * i;
 		c = c * (b / d);
 		d = b;
-
+		
 		return Fraction(a - c, d);
 
 	}
