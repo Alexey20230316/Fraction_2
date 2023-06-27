@@ -25,16 +25,22 @@ public:
 				numerator_ = numerator_ / 3;
 				denominator_ = denominator_ / 3;
 			}
-			else if (/*!(numerator_ % numerator_) && */!(denominator_ % numerator_) && (numerator_ > 1)) // 
-			{
-				denominator_ = denominator_ / numerator_;
-				numerator_ = 1;
-			}
-			else if (!(numerator_ % denominator_) /*&& !(denominator_ % denominator_) */&& (denominator_ > 1))
+
+
+			//*********************************************************
+			 // этот код глюкует, если ввести 2 одинаковые дроби
+			//else if (!(denominator_ % numerator_)) // сокращает например 11/22 
+			//{
+			//	denominator_ = denominator_ / numerator_;
+			//	numerator_ = 1;
+			//}
+			/*else if (!(numerator_ % denominator_))  // сокращает например 22/11
 			{
 				numerator_ = numerator_ / denominator_;
-				denominator_ = denominator_ / denominator_;
-			}
+				denominator_ = 1;
+			}*/
+			//**********************************************************
+
 			else { bye = 0; }
 		}
 	}
